@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: assignment8-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: assignment8-app
+  template:
+    metadata:
+      labels:
+        app: assignment8-app
+    spec:
+      containers:
+      - name: assignment8-container
+        image: assignment8-docker
+        imagePullPolicy: Never
